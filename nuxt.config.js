@@ -52,6 +52,7 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     "@nuxtjs/axios",
     "@nuxtjs/pwa",
+    "bootstrap-vue/nuxt",
     [
       "@nuxtjs/firebase",
       {
@@ -66,8 +67,8 @@ export default {
         },
         services: {
           firestore: true
-        }
-      }
+        },
+      },
     ]
   ],
   /*
