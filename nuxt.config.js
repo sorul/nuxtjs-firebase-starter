@@ -35,7 +35,9 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [],
+  plugins: [
+    // '~/plugins/firebase.js'
+  ],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -54,21 +56,22 @@ export default {
     "@nuxtjs/pwa",
     "bootstrap-vue/nuxt",
     [
-      "@nuxtjs/firebase",
+      '@nuxtjs/firebase',
       {
         config: {
-          apiKey: "AIzaSyAPtqu5c07rUh4LIY-709GE7rXYXE4VAZI",
-          authDomain: "nuxtjs-firebase-starter.firebaseapp.com",
-          databaseURL: "https://nuxtjs-firebase-starter.firebaseio.com",
-          projectId: "nuxtjs-firebase-starter",
-          storageBucket: "nuxtjs-firebase-starter.appspot.com",
-          messagingSenderId: "837215017869",
-          appId: "1:837215017869:web:fb184c2cecf02a0ceefbc4"
+          apiKey: "AIzaSyAffT-YHE1AvCby9ikOH6-YAPeOoQWutB4",
+          authDomain: "debate-ccbb9.firebaseapp.com",
+          databaseURL: "https://debate-ccbb9.firebaseio.com",
+          projectId: "debate-ccbb9",
+          storageBucket: "debate-ccbb9.appspot.com",
+          messagingSenderId: "342808151129",
+          appId: "1:342808151129:web:5fcc75dbcd8809a9939d48"
         },
         services: {
+          auth: true,
           firestore: true
-        },
-      },
+        }
+      }
     ]
   ],
   /*
