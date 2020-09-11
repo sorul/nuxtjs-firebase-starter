@@ -1,6 +1,6 @@
 <template>
   <b-container>
-    <b-row>
+    <b-row v-if="user">
       <b-col>
         <h2>Crear debate</h2>
         <!-- Estos formularios agrupados se pueden buscar en bootstrap vue -->
@@ -102,10 +102,17 @@ export default {
         name: "",
         description: ""
       },
+      user: '',
       discussionToUpdate: null, //objeto tipo debate que se rellenará cuando clickemos en un debate de la lista y se imprimirá en el formulario de editar/borrar
       list: [] //lista de objetos tipo debate
     };
   },
+
+  async mounted(){
+      await this.$fireAuth.onAuthStateChanged(user =>{
+        this.user = user;
+      })
+    },
 
   async created() { //este método se llamará solo una vez cuando se cargue el componente porque está declarado fuera de los 'methods' de abajo
     const discussions = await this.$fireStore.collection("discussions").get(); //usar await cuando haya que hacer una llamada a la API, de esta forma el código esperará hasta que la API responda

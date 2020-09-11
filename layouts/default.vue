@@ -50,8 +50,8 @@
         user: ''
       }
     },
-    mounted(){
-      this.$fireAuth.onAuthStateChanged(user =>{
+    async mounted(){
+      await this.$fireAuth.onAuthStateChanged(user =>{
         this.user = user;
       })
     },
